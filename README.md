@@ -11,7 +11,7 @@ Es gibt 2 Arten von Datensätzen, Häuser und Bevölkerung. Dieses Beispiel basiert
 ../input/pums/ss13husb.csv (housing, b)
 ```
 
-"a" enthält die Staaten 1 bis 25 und "b" die Staaten 26 bis 50. Um eine noch größere Datei zu erhalten, können beide Dateien in eine Datei gemergt werden. Zu Testzwecken ist eine kleine Datei ss13husa-test.csv unter src/test/resources im Projekt enthalten.
+"a" enthält die Staaten 1 bis 25 und "b" die Staaten 26 bis 50. Um eine noch größere Datei zu erhalten, können beide Dateien in eine Datei gemergt werden. Zu Testzwecken ist eine kleine Datei `ss13husa-test.csv` unter `src/test/resources` im Projekt enthalten.
 
 Jede Zeile stellt ein Haus dar mit den Eigenschaften Region, Staat, Alter, Miete oder Eigentum, etc.
 
@@ -19,9 +19,9 @@ Der MapReduce-Job zählt einfach die Anzahl der Häuser pro Bundesstaat. Die Infor
 
 # Installation Eclipse 
 1. Git Repository lokal klonen
-```
-git clone https://github.com/mihca/hadoop-mapreduce
-```
+  ```
+  git clone https://github.com/mihca/hadoop-mapreduce
+  ```
 2. Eclipse starten und File/Import und dann "Existing Maven Projects" anklicken und das pom.xml auswählen.
 
 # Beispiel ausführen
