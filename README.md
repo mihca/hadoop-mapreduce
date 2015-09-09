@@ -59,14 +59,13 @@ http://192.168.149.130:8000/filebrowser
 hadoop jar hadoop-0.0.1-SNAPSHOT-job.jar com.msg.xt.hadoop.acs.StateJob /user/hue/ss13hus.csv /user/hue/output
 ```
 
-* Ergebnis anzeigen
- Im Erfolgsfall finden sich im Ausgabeverzeichnis folgende Artefakte. Die Datei `_SUCCESS` symbolisiert die erfolgreiche Ausführung des Jobs. Jeder Reducer-Prozess erzeugt eine eigene Datei(en) `part-r-nnnnn`. In diesem Fall gab es nur einen Reducer.
+Im Erfolgsfall finden sich im Ausgabeverzeichnis folgende Artefakte. Die Datei `_SUCCESS` symbolisiert die erfolgreiche Ausführung des Jobs. Jeder Reducer-Prozess erzeugt eine eigene Datei(en) `part-r-nnnnn`. In diesem Fall gab es nur einen Reducer.
 ```
 [root@sandbox hue]# hadoop fs -ls /user/hue/output 
 -rw-r--r--   1 root hdfs          0 2015-09-02 13:59 /user/hue/output/_SUCCESS
 -rw-r--r--   1 root hdfs        450 2015-09-02 13:59 /user/hue/output/part-r-00000
 ```
-Die Ergebnisse lassen sich über folgenden Befehl zu einer lesbaren Datei zusammenfassen:
+* Die Ergebnisse lassen sich über folgenden Befehl zu einer lesbaren Datei zusammenfassen:
 ```
 hadoop fs -getmerge /user/hue/output/ output.txt
 ```
