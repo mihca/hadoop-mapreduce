@@ -18,29 +18,29 @@ Jede Zeile stellt ein Haus dar mit den Eigenschaften Region, Staat, Alter, Miete
 Der MapReduce-Job zählt einfach die Anzahl der Häuser pro Bundesstaat. Die Information über den Bundesstaat steht in Spalte 6.
 
 # Installation Eclipse 
-1. Git Repository lokal klonen
-  ```
-  git clone https://github.com/mihca/hadoop-mapreduce
-  ```
-2. Eclipse starten und File/Import und dann "Existing Maven Projects" anklicken und das pom.xml auswählen.
+* Git Repository lokal klonen
+```
+git clone https://github.com/mihca/hadoop-mapreduce
+```
+* Eclipse starten und File/Import und dann "Existing Maven Projects" anklicken und das pom.xml auswählen.
 
 # Beispiel ausführen
-1. Build auf Kommandozeile starten mit
+* Build auf Kommandozeile starten mit
 ```
 mvn clean package
 ```
-2. Buildergebnis `target/hadoop-0.0.1-SNAPSHOT-job.jar` auf den Hadoop-Masterknoten kopieren 
+* Buildergebnis `target/hadoop-0.0.1-SNAPSHOT-job.jar` auf den Hadoop-Masterknoten kopieren 
 
-3. Datendatei auf den Hadoop-Masterknoten ins HDFS kopieren, z.B. über den FileBrowser in HUE:
+* Datendatei auf den Hadoop-Masterknoten ins HDFS kopieren, z.B. über den FileBrowser in HUE:
 http://192.168.149.130:8000/filebrowser
 
-4. Job über SSH starten 
+* Job über SSH starten 
 ```
 hadoop jar hadoop-0.0.1-SNAPSHOT-job.jar com.msg.xt.hadoop.acs.StateJob /user/achim/ss13hus.csv /user/achim/output
 ```
 `/user/achim/ss13hus.csv` stellt dabei die Eingabedatei und `/user/achim/output` das Ausgabeverzeichnis dar
 
-5. Ergebnis anzeigen
+* Ergebnis anzeigen
  Im Erfolgsfall finden sich im Ausgabeverzeichnis folgende Artefakte. Die Datei `_SUCCESS` symbolisiert die erfolgreiche Ausführung des Jobs. Die Datei(en) `part-r-nnnnn` werden pro Reducer erzeugt, d.h. in diesem Fall gab es nur einen Reducer-Prozess.
 ```
 -rw-r--r--   1 root hdfs          0 2015-09-02 13:59 /user/achim/output/_SUCCESS
